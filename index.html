@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Javascript-Assignment-15</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="todoApp">
+            <div class="addMode">
+               <textarea  id="textArea">
+
+               </textarea>
+               <div class="buttonArea center column">
+               <button id="btn" onclick="addList()">ADD</button>
+               <button id="btn" onclick="updateList()">Update</button>
+              </div>
+            </div>
+
+            <div class="heading column center" >All Tasks</div>
+
+            <ul class="list">
+            <li>
+                <span id="elip">This is paragagraph to be written in this section and this is </span>
+                <div class="btns">
+                    <button class ="edit" onclick="editList(this)">Edit</button><button class="delete btn" onclick="deleteList(this)">Delete</button>
+                </div>
+            </li>
+            
+              
+            </ul>
+           </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
