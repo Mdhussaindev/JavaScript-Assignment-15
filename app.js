@@ -1,41 +1,89 @@
-
-let List = document.querySelector(".list");
-let textArea = document.querySelector("#textArea");
-
-let targetLi = null; // store selected li for edit
-
-function addList() {
-  if (textArea.value.trim() === "") return;
-
-  let li = document.createElement("li");
-
-  li.innerHTML = `
-    <span id="elip">${textArea.value}</span>
-    <div class="btns">
-      <button class="edit" onclick="editList(this)">Edit</button>
-      <button class="delete btn" onclick="deleteList(this)">Delete</button>
-    </div>
-  `;
-
-  List.append(li);
-  textArea.value = "";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-function editList(btn) {
-  targetLi = btn.parentNode.parentNode; // save li
-  let text = targetLi.children[0].innerText;
-  textArea.value = text;
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-function updateList() {
-  if (!targetLi) return;
-
-  targetLi.children[0].innerText = textArea.value;
-  textArea.value = "";
-  targetLi = null;
+.container {
+    background: #fff;
+    width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-function deleteList(btn) {
-  let li = btn.parentNode.parentNode;
-  li.remove();
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 4px 2px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+button:first-of-type {
+    background: #4CAF50;
+    color: #fff;
+}
+
+button:nth-of-type(2) {
+    background: #e74c3c;
+    color: #fff;
+}
+
+
+ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+li {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+li button {
+    font-size: 12px;
+    padding: 6px 12px;
+
+}
+
+li button:first-of-type {
+    background: #e74c3c;
+    color: white;
+}
+
+li button:last-of-type {
+    background: #3498db;
+    color: white;
 }
